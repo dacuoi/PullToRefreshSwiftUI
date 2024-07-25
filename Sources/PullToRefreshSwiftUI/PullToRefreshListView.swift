@@ -171,7 +171,7 @@ public struct PullToRefreshListView<AnimationViewType: View, ContentViewType: Vi
     
     private func startIfNeeded() {
         if isPullToRefreshEnabled,
-           scrollViewState.contentOffset > options.pullToRefreshAnimationHeight,
+           scrollViewState.contentOffset >= options.pullToRefreshAnimationHeight-1,
            !scrollViewState.isTriggered &&
             !scrollViewState.isRefreshing {
             
