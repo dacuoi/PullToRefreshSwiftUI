@@ -27,7 +27,14 @@ extension View {
             )
             .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
     }
-
+    // Tạo extension cho View để thêm hàm if
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
+    }
 }
 
 private struct SizePreferenceKey: PreferenceKey {

@@ -61,7 +61,10 @@ struct ListContentView: View {
                                                   animationDuration: 0.3,
                                                   animatePullingViewPresentation: true,
                                                   animateRefreshingViewPresentation: true),
+            paddingTopIndicators: 16,
             isRefreshing: $isRefreshing,
+            listStyle: .grouped,
+            listTopPadding: 50,
             onRefresh: {
                 debugPrint("Refreshing")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(5), execute: {
